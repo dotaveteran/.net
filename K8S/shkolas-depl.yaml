@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shkolas-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: schoolservice
+  template:
+    metadata:
+      labels:
+        app: schoolservice
+    spec:
+      containers:
+        - name: schoolservice
+          image: steelseries/schoolservice:latest
